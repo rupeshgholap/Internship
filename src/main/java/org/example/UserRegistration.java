@@ -1,5 +1,6 @@
 package org.example;
 
+import java.sql.SQLOutput;
 import java.util.*;
 
 public class UserRegistration {
@@ -17,6 +18,7 @@ public class UserRegistration {
             String checkCountry = "India";
             if(country.equalsIgnoreCase(checkCountry))
             {
+                System.out.println("Congrats "+user);
                 System.out.println("registration Succesfull");
             }
             else
@@ -28,6 +30,13 @@ public class UserRegistration {
         {
             System.out.println(e.getStr());
         }
+
+    }
+
+    public static void main(String[] args) {
+
+        UserRegistration ur = new UserRegistration();
+        ur.registerUser();
 
     }
 
