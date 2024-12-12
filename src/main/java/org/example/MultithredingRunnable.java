@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class MultithredingRunnable implements Runnable {
 
+
     @Override
     public void run() {
 
@@ -12,7 +13,7 @@ public class MultithredingRunnable implements Runnable {
         int n=sc.nextInt();
         for (int i =1; i<=10; i++)
         {
-            System.out.println("table of "+n+" : "+ i*n);
+            System.out.println(" table of "+n+" : "+ i*n);
             try
             {
                 Thread.sleep(1000);
@@ -23,7 +24,7 @@ public class MultithredingRunnable implements Runnable {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         MultithredingRunnable MT = new MultithredingRunnable();
         Thread T= new Thread(MT);
@@ -32,6 +33,7 @@ public class MultithredingRunnable implements Runnable {
         MultithredingRunnable MT2 = new MultithredingRunnable();
         Thread T2= new Thread(MT2);
         T2.start();
+
 
 
     }
