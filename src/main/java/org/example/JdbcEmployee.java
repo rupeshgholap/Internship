@@ -41,6 +41,16 @@ public class JdbcEmployee {
             ps.setString(2,"support");
             int d = ps.executeUpdate();
             System.out.println(d+" rows updated");
+
+            //Inserting data
+            String query ="insert into employee (id, department,name,salary) values(?,?,?,?)";
+            PreparedStatement insert = con.prepareStatement(query);
+            insert.setInt(1, 8);
+            insert.setString(2,"backend");
+            insert.setString(3,"sham");
+            insert.setDouble(4,1700.00);
+            int i = insert.executeUpdate();
+            System.out.println(i+" record inserted");
         }
 
         catch (ClassNotFoundException e)
